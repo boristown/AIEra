@@ -7,6 +7,10 @@ from flask import render_template
 from AIEra import app
 
 @app.route('/')
+def main():
+    return render_template(
+        'main.html')
+
 @app.route('/home')
 def home():
     """Renders the home page."""
