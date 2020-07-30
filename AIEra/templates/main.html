@@ -4,19 +4,42 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>轻松搭建量化交易系统</title>
+    <title>初次搭建海龟交易系统</title>
+    <script src="/static/scripts/vue.js"></script>
+    <script src="/static/scripts/common.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/content/main.css" />
 </head>
 <body>
-    <div class="body-main-area">
-        <h1>轻松搭建量化交易系统</h1>
-        <font color="#FF0000"><b>入场规则</b><br></font>当向上突破
+    <div class="body-main-area" id="vue_app">
+        <h1>初次搭建海龟交易系统</h1>
+        <div class="trading-rules-title">入场规则</div>
+        当向上突破
         <input class="input-bottom-line" type="text" name="name" size="3"
-                oninput="value=value.replace(/[^\d]/g,'')">
-        日最高价时，入场做多；<br>当向下突破
+               oninput="value=value.replace(/[^\d]/g,'')"
+               v-model="EntryDonchianDays">
+        日最高价时，入场做多；<br>
+        当向下突破
         <input class="input-bottom-line" type="text" name="name" size="3"
-               oninput="value=value.replace(/[^\d]/g,'')">
+               oninput="value=value.replace(/[^\d]/g,'')"
+               v-model="EntryDonchianDays">
         日最低价时，入场做空。
+        <div class="trading-rules-title">头寸公式</div>
+        头寸大小 = 余额 *
+        <input class="input-bottom-line" type="text" name="name" size="3"
+               oninput="value=value.replace(/[^\d]/g,'')"
+               v-model="PositionATRPercentage">
+        ‰ /
+        <input class="input-bottom-line" type="text" name="name" size="3"
+               oninput="value=value.replace(/[^\d]/g,'')"
+               v-model="ATRDays">
+        日ATR
+        <div class="trading-rules-title">退出规则</div>
+        当价格向亏损方向移动ATR * 
+        <input class="input-bottom-line" type="text" name="name" size="3"
+               oninput="value=value.replace(/[^\d]/g,'')"
+               v-model="ExitATRRatios">
+        / 10 时触发止损。
     </div>
+    <script src="/static/scripts/main.js"></script>
 </body>
 </html>

@@ -40,7 +40,10 @@
     <Folder Include="AIEra\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AIEra\static\scripts\common.js" />
     <Content Include="AIEra\static\content\main.css" />
+    <Content Include="AIEra\static\scripts\main.js" />
+    <Content Include="AIEra\static\scripts\vue.js" />
     <Content Include="AIEra\templates\main.html" />
     <Content Include="requirements.txt" />
     <Content Include="AIEra\static\content\bootstrap.css" />
